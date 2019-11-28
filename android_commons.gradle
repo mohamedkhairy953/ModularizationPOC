@@ -1,0 +1,70 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion Versions.compileSdk
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode Releases.versionCode
+        versionName Releases.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            buildConfigField "String", "BASE_URL", project.PUBLIC_BASE_URL
+        }
+        debug {
+            buildConfigField "String", "BASE_URL", project.LOCAL_BASE_URL
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation TestLibraries.androidTestRunner
+    androidTestImplementation Espresso.espresso
+
+    implementation Kotlin.kotlin
+
+    implementation Koin.koin
+    implementation Koin.koinTest
+    implementation Koin.koinViewModel
+
+    kapt Room.roomCompiler
+    implementation Room.roomRunTime
+    implementation Room.roomKtx
+
+    implementation Retrofit.retrofitCoroutineAdapter
+    implementation Retrofit.gson
+    implementation Retrofit.retrofit
+    implementation Retrofit.retrofitGsonConverter
+    implementation Retrofit.httpLoggingInterceptor
+
+    implementation Glide.glide
+
+    implementation Coroutines.kotlinCoroutineCore
+    implementation Coroutines.kotlinCoroutineAndroid
+    implementation Coroutines.coroutineTest
+
+    implementation Paging.paging
+    implementation Paging.pagingTest
+
+    implementation AndroidLibraries.appCompat
+    implementation AndroidLibraries.coreKtx
+    implementation AndroidLibraries.constraintLayout
+    implementation AndroidLibraries.recyclerView
+
+    implementation Lifecycle.lifecycleViewModel
+    implementation Lifecycle.lifecycleExtensions
+    implementation Lifecycle.lifecycleViewModel
+    implementation Lifecycle.lifecycleLiveData
+    implementation Lifecycle.lifecycleScope
+
+    implementation NavigationUi.navigation
+    implementation NavigationUi.navigationFrag
+}

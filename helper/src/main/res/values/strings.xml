@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">helper</string>
+    <string name="general_error_network">general_error_network</string>
+    <string name="general_error_server">general_error_server</string>
+    <string name="general_error_invalid_credentials">general_error_invalid_credentials</string>
+    <string name="general_error_try_again_error">general_error_try_again_error</string>
+</resources>

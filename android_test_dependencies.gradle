@@ -1,0 +1,14 @@
+dependencies {
+    // ANDROID TEST
+    androidTestImplementation TestLibraries.androidTestRunner
+    androidTestImplementation Espresso.espresso
+    // KOIN
+    androidTestImplementation Koin.koinTest
+    // ANDROID
+    androidTestImplementation TestLibraries.archCoreTest
+    androidTestImplementation TestLibraries.junit
+    // MOCK
+    androidTestImplementation Mocking.mockk
+    androidTestImplementation Mocking.mockkAndroid
+    androidTestImplementation Mocking.mockWebServer
+}

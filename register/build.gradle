@@ -1,0 +1,19 @@
+apply plugin: 'com.android.library'
+apply from: '../android_commons.gradle'
+
+android {
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+}
+
+dependencies {
+    implementation project(':helper')
+
+}
